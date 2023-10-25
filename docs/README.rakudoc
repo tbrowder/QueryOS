@@ -30,6 +30,26 @@ Current attributes and methods are:
 =item is-macos
 =item is-ubuntu
 
+=head1 Example binary use
+
+When I execute C<query-os> on my system I get:
+
+=begin code
+This program is currently running on:
+
+    Host:           bigtom
+    User:           tbrowde
+    Distro:         debian
+    Version name:   bullseye
+    Version number: 11
+    System:         x86_64
+
+This module provides class OS whose attributes
+provide details of the system to aid module
+authors porting to multiple versions. See the
+README for more information.
+=end code
+
 =head1 AUTHOR
 
 Tom Browder <tbrowder@acm.org>

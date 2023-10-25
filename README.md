@@ -35,6 +35,25 @@ Current attributes and methods are:
 
   * is-ubuntu
 
+Example binary use
+==================
+
+When I execute `query-os` on my system I get:
+
+    This program is currently running on:
+
+        Host:           bigtom
+        User:           tbrowde
+        Distro:         debian
+        Version name:   bullseye
+        Version number: 11
+        System:         x86_64
+
+    This module provides class OS whose attributes
+    provide details of the system to aid module
+    authors porting to multiple versions. See the
+    README for more information.
+
 AUTHOR
 ======
 
