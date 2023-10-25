@@ -253,8 +253,8 @@ sub query {
     This module provides class 'OS' whose attributes
     provide details of the system to aid module
     authors porting to multiple versions. See the
-    README for more information or enter 'list'
-    after this program name.
+    README for more information or use the 'list'
+    option to this program.
     HERE
 
     if $distro-is-known {
