@@ -11,7 +11,7 @@ SYNOPSIS
 ```raku
 use QueryOS;
 my $o = OS.new;
-say $o.version-name # OUTPUT: « debian␤»
+say $o.version-name # OUTPUT: «debian␤»
 ```
 
 DESCRIPTION

@@ -9,7 +9,7 @@ B<QueryOS> - Provides a class and an executable, C<query-os>, to list OS details
 =begin code :lang<raku>
 use QueryOS;
 my $o = OS.new;
-say $o.version-name # OUTPUT: « debian␤»
+say $o.version-name # OUTPUT: «debian␤»
 =end code
 
 =head1 DESCRIPTION
