@@ -36,6 +36,7 @@ macos;  12.6.7
 macos;  13.5  
 macos;  11.7.8
 mswin32; 10.0.17763.52
+opensuse-leap; v15.4
 =end comment
 
 =begin comment
