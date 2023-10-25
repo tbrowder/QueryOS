@@ -10,12 +10,14 @@ SYNOPSIS
 
 ```raku
 use QueryOS;
+my $o = OS.new;
+say $o.version-name # OUTPUT: « debian␤»
 ```
 
 DESCRIPTION
 ===========
 
-**QueryOS** is a module that provides a class, `OS`, with methods and attributes to simplify module authors' porting their work to various operating systems by identifying important system discriminators. The module relies on the attributes of Raku's `$*DISTRO` vatiable and parses out additional details in parts of those attributes.
+**QueryOS** is a module that provides a class, `OS`, with methods and attributes to simplify module authors' porting their work to various operating systems by identifying important system discriminators. The module relies on the attributes of Raku's `$*USER`, `$*DISTRO`, and `$*KERNAL` variables and parses out additional details in parts of those attributes.
 
 Current attributes and methods are:
 
