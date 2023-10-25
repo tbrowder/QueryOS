@@ -165,14 +165,18 @@ class OS is export {
         %h
     }
 
-    method is-debian(--> Bool) {
-        my $vnam = $*DISTRO.name.lc;
-        $vnam eq 'debian';
+    method is-linux(--> Bool) {
+        not (is-macos or is-windows)
     }
 
-    method is-ubuntu(--> Bool) {
+    method is-macos(--> Bool) {
         my $vnam = $*DISTRO.name.lc;
-        $vnam eq 'ubuntu';
+        $vnam ~~ /macos/
+    }
+
+    method is-windows(--> Bool) {
+        my $vnam = $*DISTRO.name.lc;
+        $vnam ~~ /mswin/
     }
 
 } # end of class OS definition
