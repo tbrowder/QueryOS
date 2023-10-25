@@ -194,17 +194,6 @@ sub is-ubuntu(--> Bool) {
 
 sub run-cli(@args) is export {
 
-    my $o = OS.new;
-    my $vnum = $o.version-serial;
-    my $vnam = $o.version-name;
-
-    my $user    = $*USER.lc;
-    my $is-root = $user eq 'root' ?? True !! False;
-    my $host    = $*KERNEL.hostname;
-    my $system  = $*KERNEL.hardware // "Unknown system";
-    my $distro  = $*DISTRO.name;
-    my $version = $*DISTRO.version;
-
     if not @args.elems {
         print qq:to/HERE/;
         Usage: {$*PROGRAM.basename} query | list
@@ -224,15 +213,27 @@ sub run-cli(@args) is export {
 } # sub run-cli(@args) is export {
 
 sub query {
+
+    my $o = OS.new;
+    my $vnum = $o.version-serial;
+    my $vnam = $o.version-name;
+
+    my $user    = $*USER.lc;
+    my $is-root = $user eq 'root' ?? True !! False;
+    my $host    = $*KERNEL.hostname;
+    my $system  = $*KERNEL.hardware // "Unknown system";
+    my $distro  = $*DISTRO.name;
+    my $version = $*DISTRO.version;
+
     print qq:to/HERE/;
 
     This program is currently running on:
 
-    Host:           $host
-                     User:           $user
-                                      HERE
+        Host:           $host
+        User:           $user
+    HERE
 
-                                      my $distro-is-known = %known-distros{$distro}:exists ?? True !! False;
+    my $distro-is-known = %known-distros{$distro}:exists ?? True !! False;
     if $distro-is-known {
         say "    Distro:         $distro*";
     }
@@ -241,30 +242,29 @@ sub query {
         Distro:         $distro*
                          (name not recognized,
                           please file an issue)
-            HERE
-        }
-
-        print qq:to/HERE/;
-            Version name:   $vnam
-            Version number: $vnum
-            System:         $system
-
-        This module provides class 'OS' whose attributes
-        provide details of the system to aid module
-        authors porting to multiple versions. See the
-        README for more information or enter 'list'
-        after this program name.
         HERE
+    }
 
-        if $distro-is-known {
-            print qq:to/HERE/;
+    print qq:to/HERE/;
+        Version name:   $vnam
+        Version number: $vnum
+        System:         $system
 
-            *NOTE: If the 'Distro' name is not recognized,
-                   it will be so stated in parentheses
-                   following the reported name. Known names
-                   are listed in the README.
-            HERE
-         }
+    This module provides class 'OS' whose attributes
+    provide details of the system to aid module
+    authors porting to multiple versions. See the
+    README for more information or enter 'list'
+    after this program name.
+    HERE
+
+    if $distro-is-known {
+        print qq:to/HERE/;
+
+        *NOTE: If the 'Distro' name is not recognized,
+               it will be so stated in parentheses
+               following the reported name.
+        HERE
+    }
 } # sub query
 
 sub list-known-distros {
