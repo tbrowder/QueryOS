@@ -166,7 +166,7 @@ class OS is export {
     }
 
     method is-linux(--> Bool) {
-        not (is-macos or is-windows)
+        not (self.is-macos or self.is-windows)
     }
 
     method is-macos(--> Bool) {
@@ -181,7 +181,7 @@ class OS is export {
 
 } # end of class OS definition
 
-
+=begin comment
 sub is-debian(--> Bool) {
     my $vnam = $*DISTRO.name.lc;
     $vnam eq 'debian';
@@ -190,6 +190,7 @@ sub is-ubuntu(--> Bool) {
     my $vnam = $*DISTRO.name.lc;
     $vnam eq 'ubuntu';
 }
+=end comment
 
 sub run-cli(@args) is export {
 
@@ -233,7 +234,8 @@ sub run-cli(@args) is export {
         This module provides class 'OS' whose attributes
         provide details of the system to aid module
         authors porting to multiple versions. See the
-        README for more information.
+        README for more information or enter 'list'
+        after this program name.
         HERE
 
         if $distro-is-known {
@@ -248,18 +250,12 @@ sub run-cli(@args) is export {
 
         exit;
     }
+    
+    for @args {
+        when /:i l/ {
+            say "Known distro names:";
+            say "  $_" for %known-distros.keys.sort;
+        }
+    }
+
 } # sub run-cli(@args) is export {
-
-=finish
-
-for @*ARGS {
-    when /^ d / { ++$debug }
-    when /^ g / {
-        ; # ok
-    }
-
-    default {
-        note "FATAL: Unknown arg '$_'";
-        exit;
-    }
-}
