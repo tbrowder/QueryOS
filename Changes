@@ -1,6 +1,7 @@
 Revision history for QueryOS
 
 {{$NEXT}}
+    - Added note about unknown distro names
     - New $*DISTRO.name results verified:
       + opensuse-leap => suse
       + gentoo 

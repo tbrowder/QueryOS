@@ -24,8 +24,15 @@ with $o.name {
         is 1, 1
     }
     default {
-       # fatal, unknown distribution
-       die "FATAL: Unknown distro name: '$_' (please file an issue report)";
+       is 1,1;
+       # warn of unknown distribution
+       note "NOTE: Unknown distro name: '$_'";
+       note qq:to/HERE/;
+              Please file an issue report and include the
+              output of:
+                say $*DISTRO.name
+                say $*DISTRO.version
+       HERE
     }
 }
 
