@@ -210,26 +210,37 @@ sub run-cli(@args) is export {
         Usage: {$*PROGRAM.basename} query | list
         HERE
         exit;
+    }
 
-        =begin comment
-        # sub query
-        print qq:to/HERE/;
-
-        This program is currently running on:
-
-            Host:           $host
-            User:           $user
-        HERE
-
-        my $distro-is-known = %known-distros{$distro}:exists ?? True !! False;
-        if $distro-is-known {
-            say "    Distro:         $distro*";
+    for @args {
+        when /:i q/ {
+            query
         }
-        else {
-            print qq:to/HERE/;
-                Distro:         $distro*
-                                   (name not recognized,
-                                    please file an issue)
+        when /:i l/ {
+            list-known-distros
+        }
+    }
+
+} # sub run-cli(@args) is export {
+
+sub query {
+    print qq:to/HERE/;
+
+    This program is currently running on:
+
+    Host:           $host
+                     User:           $user
+                                      HERE
+
+                                      my $distro-is-known = %known-distros{$distro}:exists ?? True !! False;
+    if $distro-is-known {
+        say "    Distro:         $distro*";
+    }
+    else {
+        print qq:to/HERE/;
+        Distro:         $distro*
+                         (name not recognized,
+                          please file an issue)
             HERE
         }
 
@@ -254,27 +265,9 @@ sub run-cli(@args) is export {
                    are listed in the README.
             HERE
          }
-        =end comment
-
-        exit;
-    }
-    
-    for @args {
-        when /:i q/ {
-            query
-        }
-        when /:i l/ {
-            list-known-distros
-        }
-    }
-
-} # sub run-cli(@args) is export {
-
-sub query {
 } # sub query
 
 sub list-known-distros {
     say "Known distro names:";
     say "  $_" for %known-distros.keys.sort;
 } # sub list-known-distros
-
