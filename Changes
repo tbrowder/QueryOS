@@ -1,6 +1,8 @@
 Revision history for QueryOS
 
 {{$NEXT}}
+
+0.1.0  2023-10-25T17:58:10-05:00
     - Added more info to README
     - Added a more conventional usage option to the bin file
     - Added note about unknown distro names
