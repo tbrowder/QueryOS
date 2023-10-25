@@ -14,7 +14,21 @@ use QueryOS;
 
 =head1 DESCRIPTION
 
-B<QueryOS> is ...
+B<QueryOS> is a module that provides a class, C<OS>, with methods and attributes
+to simplify module authors' porting their work to various operating systems by identifying
+important system discriminators. The module relies on the attributes of Raku's C<$*DISTRO>
+vatiable and parses out additional details in parts of those attributes.
+
+Current attributes and methods are:
+
+=item name - from C<$*DISTRO.name>
+=item version - from C<$*DISTRO.version>
+=item version-name - text part of C<$*DISTRO.name>
+=item version-serial - number part of C<$*DISTRO.name>
+=item is-debian
+=item is-windows
+=item is-macos
+=item is-ubuntu
 
 =head1 AUTHOR
 

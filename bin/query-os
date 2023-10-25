@@ -1,0 +1,5 @@
+#!/usr/bin/raku
+
+use QueryOS;
+
+run-cli @*ARGS;
