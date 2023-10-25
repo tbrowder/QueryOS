@@ -207,6 +207,13 @@ sub run-cli(@args) is export {
 
     if not @args.elems {
         print qq:to/HERE/;
+        Usage: {$*PROGRAM.basename} query | list
+        HERE
+        exit;
+
+        =begin comment
+        # sub query
+        print qq:to/HERE/;
 
         This program is currently running on:
 
@@ -247,15 +254,27 @@ sub run-cli(@args) is export {
                    are listed in the README.
             HERE
          }
+        =end comment
 
         exit;
     }
     
     for @args {
+        when /:i q/ {
+            query
+        }
         when /:i l/ {
-            say "Known distro names:";
-            say "  $_" for %known-distros.keys.sort;
+            list-known-distros
         }
     }
 
 } # sub run-cli(@args) is export {
+
+sub query {
+} # sub query
+
+sub list-known-distros {
+    say "Known distro names:";
+    say "  $_" for %known-distros.keys.sort;
+} # sub list-known-distros
+

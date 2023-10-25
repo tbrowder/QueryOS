@@ -41,7 +41,7 @@ Current attributes and methods are:
 
 =head1 Example binary use
 
-When I execute C<query-os> on my system I get:
+When I execute C<query-os q> on my system I get:
 
 =begin code
 This program is currently running on:
@@ -56,7 +56,8 @@ This program is currently running on:
 This module provides class OS whose attributes
 provide details of the system to aid module
 authors porting to multiple versions. See the
-README for more information.
+README for more information or use the C<list>
+option for a list of known distro names..
 =end code
 
 =head1 AUTHOR

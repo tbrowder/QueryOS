@@ -27,13 +27,26 @@ Current attributes and methods are:
 
   * version-serial - number part of `$*DISTRO.name`
 
-  * is-debian
+  * is-linux
 
   * is-windows
 
   * is-macos
 
-  * is-ubuntu
+List of known DISTRO names:
+===========================
+
+  * debian
+
+  * gentoo
+
+  * macos
+
+  * mswin
+
+  * suse
+
+  * ubuntu
 
 Example binary use
 ==================
