@@ -7,9 +7,9 @@ B<QueryOS> - Provides a class and an executable, C<query-os>, to list OS details
 =head1 SYNOPSIS
 
 =begin code :lang<raku>
-
 use QueryOS;
-
+my $o = OS.new;
+say $o.version-name # OUTPUT: « debian␤»
 =end code
 
 =head1 DESCRIPTION
@@ -17,8 +17,9 @@ use QueryOS;
 B<QueryOS> is a module that provides a class, C<OS>, with methods and
 attributes to simplify module authors' porting their work to various
 operating systems by identifying important system discriminators. The
-module relies on the attributes of Raku's C<$*DISTRO> vatiable and
-parses out additional details in parts of those attributes.
+module relies on the attributes of Raku's C<$*USER>, C<$*DISTRO>, and 
+C<$*KERNAL> variables and parses out additional details in parts of 
+those attributes.
 
 Current attributes and methods are:
 
