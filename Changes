@@ -2,5 +2,19 @@ Revision history for QueryOS
 
 {{$NEXT}}
 
+    - Added more info to README
+    - Added a more conventional usage option to the bin file
+    - Added note about unknown distro names
+    - Added list of known distro names in the README
+    - Changed OS attributes 'is-X' to only three:
+      + is-linux
+      + is-macos
+      + is-windows
+    - New $*DISTRO.name results verified:
+      + opensuse-leap => suse
+      + gentoo
+    - Add useful tags to META6.json file
+    - Updated copyright year
+
 0.0.1  2023-10-25T07:41:04-05:00
     - Initial version

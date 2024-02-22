@@ -10,12 +10,14 @@ SYNOPSIS
 
 ```raku
 use QueryOS;
+my $o = OS.new;
+say $o.version-name # OUTPUT: «debian␤»
 ```
 
 DESCRIPTION
 ===========
 
-**QueryOS** is a module that provides a class, `OS`, with methods and attributes to simplify module authors' porting their work to various operating systems by identifying important system discriminators. The module relies on the attributes of Raku's `$*DISTRO` vatiable and parses out additional details in parts of those attributes.
+**QueryOS** is a module that provides a class, `OS`, with methods and attributes to simplify module authors' porting their work to various operating systems by identifying important system discriminators. The module relies on the attributes of Raku's `$*USER`, `$*DISTRO`, and `$*KERNEL` variables and parses out additional details in parts of those attributes.
 
 Current attributes and methods are:
 
@@ -27,13 +29,50 @@ Current attributes and methods are:
 
   * version-serial - number part of `$*DISTRO.name`
 
-  * is-debian
+  * is-linux
 
   * is-windows
 
   * is-macos
 
-  * is-ubuntu
+List of known DISTRO names:
+===========================
+
+  * debian
+
+  * gentoo
+
+  * macos
+
+  * mswin
+
+  * suse
+
+  * ubuntu
+
+Example binary use
+==================
+
+When I execute `query-os q` on my system I get:
+
+    This program is currently running on:
+
+        Host:           bigtom
+        User:           tbrowde
+        Distro:         debian*
+        Version name:   bullseye
+        Version number: 11
+        System:         x86_64
+
+    This module provides class 'OS' whose attributes
+    provide details of the system to aid module
+    authors porting to multiple versions. See the
+    README for more information or use the 'list'
+    option to this program.
+
+    *NOTE: If the 'Distro' name is not recognized,
+           it will be so stated in parentheses
+           following the reported name.
 
 AUTHOR
 ======
@@ -43,7 +82,7 @@ Tom Browder <tbrowder@acm.org>
 COPYRIGHT AND LICENSE
 =====================
 
-© 2023 Tom Browder
+© 2023-2024 Tom Browder
 
 This library is free software; you may redistribute it or modify it under the Artistic License 2.0.
 
