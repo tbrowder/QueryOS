@@ -17,7 +17,7 @@ say $o.version-name # OUTPUT: «debian␤»
 DESCRIPTION
 ===========
 
-**QueryOS** is a module that provides a class, `OS`, with methods and attributes to simplify module authors' porting their work to various operating systems by identifying important system discriminators. The module relies on the attributes of Raku's `$*USER`, `$*DISTRO`, and `$*KERNAL` variables and parses out additional details in parts of those attributes.
+**QueryOS** is a module that provides a class, `OS`, with methods and attributes to simplify module authors' porting their work to various operating systems by identifying important system discriminators. The module relies on the attributes of Raku's `$*USER`, `$*DISTRO`, and `$*KERNEL` variables and parses out additional details in parts of those attributes.
 
 Current attributes and methods are:
 
@@ -82,7 +82,7 @@ Tom Browder <tbrowder@acm.org>
 COPYRIGHT AND LICENSE
 =====================
 
-© 2023 Tom Browder
+© 2023-2024 Tom Browder
 
 This library is free software; you may redistribute it or modify it under the Artistic License 2.0.
 

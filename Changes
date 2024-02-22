@@ -2,7 +2,6 @@ Revision history for QueryOS
 
 {{$NEXT}}
 
-0.1.0  2023-10-25T17:58:10-05:00
     - Added more info to README
     - Added a more conventional usage option to the bin file
     - Added note about unknown distro names
@@ -14,6 +13,8 @@ Revision history for QueryOS
     - New $*DISTRO.name results verified:
       + opensuse-leap => suse
       + gentoo
+    - Add useful tags to Meta file
+    - Updated copyright year
 
 0.0.1  2023-10-25T07:41:04-05:00
     - Initial version

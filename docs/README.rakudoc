@@ -18,7 +18,7 @@ B<QueryOS> is a module that provides a class, C<OS>, with methods and
 attributes to simplify module authors' porting their work to various
 operating systems by identifying important system discriminators. The
 module relies on the attributes of Raku's C<$*USER>, C<$*DISTRO>, and 
-C<$*KERNAL> variables and parses out additional details in parts of 
+C<$*KERNEL> variables and parses out additional details in parts of 
 those attributes.
 
 Current attributes and methods are:
@@ -71,7 +71,7 @@ Tom Browder <tbrowder@acm.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-© 2023 Tom Browder
+© 2023-2024 Tom Browder
 
 This library is free software; you may redistribute it or modify it under the Artistic License 2.0.
 
