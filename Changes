@@ -13,7 +13,7 @@ Revision history for QueryOS
     - New $*DISTRO.name results verified:
       + opensuse-leap => suse
       + gentoo
-    - Add useful tags to Meta file
+    - Add useful tags to META6.json file
     - Updated copyright year
 
 0.0.1  2023-10-25T07:41:04-05:00
