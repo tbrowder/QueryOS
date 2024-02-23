@@ -166,17 +166,17 @@ class OS is export {
     }
 
     method is-linux(--> Bool) {
-        not (self.is-macos or self.is-windows)
+        (not (self.is-macos or self.is-windows)).so
     }
 
     method is-macos(--> Bool) {
         my $vnam = $*DISTRO.name.lc;
-        $vnam ~~ /macos/
+        ($vnam ~~ /macos/).so
     }
 
     method is-windows(--> Bool) {
         my $vnam = $*DISTRO.name.lc;
-        $vnam ~~ /mswin/
+        ($vnam ~~ /mswin/).so
     }
 
 } # end of class OS definition
