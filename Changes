@@ -1,6 +1,7 @@
 Revision history for QueryOS
 
 {{$NEXT}}
+    - Add more tests
 
 0.1.1  2024-02-22T16:40:32-06:00
     - Tweak

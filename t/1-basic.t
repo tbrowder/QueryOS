@@ -1,6 +1,6 @@
 use Test;
 use QueryOS;
 
-pass "replace me";
+use-ok 'QueryOS';
 
 done-testing;
