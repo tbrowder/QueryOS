@@ -7,28 +7,28 @@ my $o = OS.new;
 with $o.name {
     # known system names
     when /:i mswin / {
-        is 1, 1, "is-windows";
-        ok $o.is-windows, "is-linux";
+        is 1, 1, "is Windows";
+        ok $o.is-windows.so, "is-windows";
     }
     when /:i debian / {
         is 1, 1, "is Debian";
-        ok $o.is-linux, "is-linux";
+        ok $o.is-linux.so, "is-linux";
     }
     when /:i ubuntu / {
-        is 1, 1, "is ubuntu";
-        ok $o.is-linux, "is-linux";
+        is 1, 1, "is Ubuntu";
+        ok $o.is-linux.so, "is-linux";
     }
     when /:i macos / {
-        is 1, 1, "is-macos";
-        ok $o.is-macos, "is-macos";
+        is 1, 1, "is MacOS";
+        ok $o.is-macos.so, "is-macos";
     }
     when /:i suse / {
-        is 1, 1;
-        ok $o.is-linux, "is-linux";
+        is 1, 1, "is Suse";
+        ok $o.is-linux.so, "is-linux";
     }
-    when /:i gentoo / {
-        is 1, 1;
-        ok $o.is-linux, "is-linux";
+    when /:i Gentoo / {
+        is 1, 1, "is gentoo";
+        ok $o.is-linux.so, "is-linux";
     }
     default {
        is 1,1, "unknown distro";
