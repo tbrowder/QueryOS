@@ -1,6 +1,8 @@
 Revision history for QueryOS
 
 {{$NEXT}}
+    - Rename the main class as QueryOS with alias of OS
+    - Add tests and entries in the README
 
 0.1.2  2024-02-22T21:19:57-06:00
     - Add more tests

@@ -7,12 +7,14 @@
   ],
   "depends": [
   ],
-  "description": "Provides a class and an executable, C<query-os>, to list OS details",
+  "description": "Provides a class and an executable, 'query-os', to list OS details",
   "license": "Artistic-2.0",
   "name": "QueryOS",
   "perl": "6.d",
   "provides": {
-    "QueryOS": "lib/QueryOS.rakumod"
+    "QueryOS": "lib/QueryOS.rakumod",
+    "QueryOS::Classes": "lib/QueryOS/Classes.rakumod",
+    "QueryOS::Subs": "lib/QueryOS/Subs.rakumod"
   },
   "resources": [
   ],

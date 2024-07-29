@@ -1,8 +1,8 @@
 use Test;
 use QueryOS;
+use QueryOS::Classes;
 
 my $o = OS.new;
-
 
 with $o.name {
     # known system names
