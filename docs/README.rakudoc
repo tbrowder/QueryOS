@@ -8,7 +8,7 @@ B<QueryOS> - Provides a class and an executable, C<query-os>, to list OS details
 
 =begin code :lang<raku>
 use QueryOS;
-my $o = QueryOS.new; # OR 'OS.new'
+my $o = QueryOS.new; # <== alternatively: 'OS.new'
 say $o.version-name  # OUTPUT: «debian␤»
 =end code
 
@@ -23,9 +23,9 @@ those attributes.
 
 Current attributes and methods are:
 
-=item name - from C<$*DISTRO.name>
-=item version - from C<$*DISTRO.version>
-=item version-name - text part of C<$*DISTRO.name>
+=item name           - from C<$*DISTRO.name>
+=item version        - from C<$*DISTRO.version>
+=item version-name   - text part of C<$*DISTRO.name>
 =item version-serial - number part of C<$*DISTRO.name>
 =item is-linux
 =item is-windows
@@ -63,6 +63,31 @@ option to this program.
 *NOTE: If the 'Distro' name is not recognized,
        it will be so stated in parentheses
        following the reported name.
+=end code
+
+For module authors, the most useful part that is used
+in ones code is this example:
+
+# TODO move this up in the README
+=begin code
+my $os = OS.new;
+if is-linux {
+    ; # some Linux-only action
+}
+elsif is-macos {
+    ; # some MacOS-only action
+}
+elsif is-windows {
+    ; # some Windows-only action
+}
+else {
+    note qq:to/HERE/;
+    WARNING: Unknown OS. Please file an issue with module 'QueryOS'
+             and provide information on what OS is being used
+             and what you are trying to do that is unique for
+             your OS.
+    HERE
+}
 =end code
 
 =head1 AUTHOR
