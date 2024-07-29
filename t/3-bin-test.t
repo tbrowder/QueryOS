@@ -4,9 +4,13 @@ use QueryOS;
 use QueryOS::Classes;
 use QueryOS::Subs;
 
-plan 1;
+my $debug = 1;
+
 lives-ok {
     my @args = "silent";
+    if $debug {
+        @args = "list";
+    }
     run-cli(@args);
 }, "cli test";
 

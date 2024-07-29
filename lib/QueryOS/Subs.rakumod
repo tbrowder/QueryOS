@@ -12,17 +12,17 @@ our %known-distros is export = set <
 
 # Debian releases
 our %debian-vnames is export = %(
-    etch => 4,
-    lenny => 5,
-    squeeze => 6,
-    wheezy => 7,
-    jessie => 8,
-    stretch => 9,
-    buster => 10,
-    bullsye => 11,
+    etch     => 4,
+    lenny    => 5,
+    squeeze  => 6,
+    wheezy   => 7,
+    jessie   => 8,
+    stretch  => 9,
+    buster   => 10,
+    bullsye  => 11,
     bookworm => 12,
-    trixie => 13,
-    forky => 14,
+    trixie   => 13,
+    forky    => 14,
 );
 our %debian-vnum is export = %debian-vnames.invert;
 
@@ -31,11 +31,16 @@ our %ubuntu-vnames is export = %(
    trusty => 14,
    xenial => 16,
    bionic => 18,
-   focal => 20,
-   jammy => 22,
-   lunar => 23,
+   focal  => 20,
+   jammy  => 22,
+   lunar  => 23,
 );
 our %ubuntu-vnum is export = %ubuntu-vnames.invert;
+
+sub list-known-distros {
+    say "Known distro names:";
+    say "  $_" for %known-distros.keys.sort;
+} # sub list-known-distros
 
 =begin comment
 # sytems confirmed
@@ -97,6 +102,7 @@ sub run-cli(@args) is export {
 
 sub query {
 
+    use QueryOS;
     my $o = QueryOS.new;
     my $vnum = $o.version-serial;
     my $vnam = $o.version-name;
@@ -149,8 +155,3 @@ sub query {
         HERE
     }
 } # sub query
-
-sub list-known-distros {
-    say "Known distro names:";
-    say "  $_" for %known-distros.keys.sort;
-} # sub list-known-distros

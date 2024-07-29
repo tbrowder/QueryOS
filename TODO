@@ -1,0 +1,14 @@
++ put the QueryOS class-sub in Subs inside
+  the class def
+  - if that doesn't work, put the QueryOS in
+    the Classes module at the top
+
++ in the docs put the code section at the
+  beginning
+
++ add tests to check all bin file ops
+
+NOTE test mi6 vs zef with lives-ok testing
+
+
+

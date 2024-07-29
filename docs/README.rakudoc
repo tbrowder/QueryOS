@@ -40,7 +40,38 @@ Current attributes and methods are:
 =item suse
 =item ubuntu
 
-=head1 Example binary use
+=head1 Example use in your code
+
+In order to provide multi-OS use of your code there are
+often times you need to take different paths or options
+depending on the OS. Following is a generic code section
+for doing that:
+
+=begin code
+use QueryOS;
+my $os = OS.new;
+if is-linux {
+    ; # some Linux-only action
+}
+elsif is-macos {
+    ; # some MacOS-only action
+}
+elsif is-windows {
+    ; # some Windows-only action
+}
+else {
+    note qq:to/HERE/;
+    WARNING: Unknown OS. Please file an issue with module 'QueryOS'
+             and provide information on what OS is being used
+             and what you are trying to do that is unique for
+             your OS.
+
+             Also file an issue with this module's author.
+    HERE
+}
+=end code
+
+=head1 Example binary use for current OS details:
 
 When I execute C<query-os q> on my system I get:
 
@@ -63,31 +94,6 @@ option to this program.
 *NOTE: If the 'Distro' name is not recognized,
        it will be so stated in parentheses
        following the reported name.
-=end code
-
-For module authors, the most useful part that is used
-in ones code is this example:
-
-# TODO move this up in the README
-=begin code
-my $os = OS.new;
-if is-linux {
-    ; # some Linux-only action
-}
-elsif is-macos {
-    ; # some MacOS-only action
-}
-elsif is-windows {
-    ; # some Windows-only action
-}
-else {
-    note qq:to/HERE/;
-    WARNING: Unknown OS. Please file an issue with module 'QueryOS'
-             and provide information on what OS is being used
-             and what you are trying to do that is unique for
-             your OS.
-    HERE
-}
 =end code
 
 =head1 AUTHOR

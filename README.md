@@ -10,7 +10,7 @@ SYNOPSIS
 
 ```raku
 use QueryOS;
-my $o = QueryOS.new; # OR 'OS.new'
+my $o = QueryOS.new; # <== alternatively: 'OS.new'
 say $o.version-name  # OUTPUT: «debian␤»
 ```
 
@@ -50,8 +50,35 @@ List of known DISTRO names:
 
   * ubuntu
 
-Example binary use
-==================
+Example use in your code
+========================
+
+In order to provide multi-OS use of your code there are often times you need to take different paths or options depending on the OS. Following is a generic code section for doing that:
+
+    use QueryOS;
+    my $os = OS.new;
+    if is-linux {
+        ; # some Linux-only action
+    }
+    elsif is-macos {
+        ; # some MacOS-only action
+    }
+    elsif is-windows {
+        ; # some Windows-only action
+    }
+    else {
+        note qq:to/HERE/;
+        WARNING: Unknown OS. Please file an issue with module 'QueryOS'
+                 and provide information on what OS is being used
+                 and what you are trying to do that is unique for
+                 your OS.
+
+                 Also file an issue with this module's author.
+        HERE
+    }
+
+Example binary use for current OS details:
+==========================================
 
 When I execute `query-os q` on my system I get:
 
